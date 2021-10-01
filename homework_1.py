@@ -80,3 +80,23 @@ l = [22, 3, 5, 2, 8, 2, -23, 8, 23, 5]
 # [-1, -2, 3, 4, 555] => 4
 # [5, 5, 5, 5] => 5
 # [-10, 5, 5] => 5
+
+l.sort()
+i = 0
+while i < len(l):
+    if l.count(l[i]) >= 2:
+        l.remove(l[i])
+    i += 1
+    newl = l
+print('\nlist:', newl)
+avg = sum(newl) / len(newl)
+print('\naverage is -', avg)
+
+for i in range(0, len(newl)):
+    if newl[i] > avg:
+        less_index = i - 1
+        if (avg - newl[less_index]) < (newl[i] - avg):
+            print('\nthe nearest number to average is -', newl[less_index])
+            break
+        else:
+            print('\nthe nearest number to average is -', newl[i])
