@@ -11,50 +11,60 @@
 #     def add_todo(todo):
 #         nonlocal todo_list
 #         todo_list.append(todo)
-#         return todo_list
 #
 #     def get_all():
 #         nonlocal todo_list
-#         print(todo_list)
+#         return todo_list
 #
-#     return add_todo
+#     return {
+#         "add_todo": add_todo,
+#         "get_all": get_all
+#     }
 #
 #
 # what_todo = notebook()
+# add_todo = what_todo.get('add_todo')('brash teath')
+# add_todo = what_todo.get('add_todo')('do morning exercise')
+# add_todo = what_todo.get('add_todo')('read the book')
+# add_todo = what_todo.get('add_todo')('make a breakfast')
+# add_todo = what_todo.get('add_todo')('drive the children to kindergarten')
 #
-# what_todo('brash teeth')
-# what_todo('do morning exercise')
-# what_todo('read the book')
-# what_todo('make a breakfast')
-# print(what_todo('drive the children to kindergarten'))
+# get_all = what_todo.get('get_all')()
+# print(get_all)
+
+from typing import Callable, Union
 
 
 # 2) протипизировать первое задание
-
-
-# def notebook():
+# Value = Union[Callable[[], list[str]], Callable[[str], None]]
+#
+#
+# def notebook() -> dict[str, Value]:
 #     todo_list = []
 #
-#     def add_todo(todo: str) -> list[str]:
+#     def add_todo(todo: str) -> None:
 #         nonlocal todo_list
 #         todo_list.append(todo)
+#
+#     def get_all() -> list[str]:
+#         nonlocal todo_list
 #         return todo_list
 #
-#     def get_all():
-#         nonlocal todo_list
-#         print(todo_list)
-#
-#     return add_todo
+#     return {
+#         "add_todo": add_todo,
+#         "get_all": get_all
+#     }
 #
 #
 # what_todo = notebook()
+# add_todo = what_todo.get('add_todo')('brash teath')
+# add_todo = what_todo.get('add_todo')('do morning exercise')
+# add_todo = what_todo.get('add_todo')('read the book')
+# add_todo = what_todo.get('add_todo')('make a breakfast')
+# add_todo = what_todo.get('add_todo')('drive the children to kindergarten')
 #
-# what_todo('brash teeth')
-# what_todo('do morning exercise')
-# what_todo('read the book')
-# what_todo('make a breakfast')
-# print(what_todo('drive the children to kindergarten'))
-
+# get_all = what_todo.get('get_all')()
+# print(get_all)
 
 # 3) С помощью lambda функции извлеките из списка числа, делимые на 15 без остатка.
 
