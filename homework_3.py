@@ -32,7 +32,7 @@
 # get_all = what_todo.get('get_all')()
 # print(get_all)
 
-from typing import Callable, Union
+# from typing import Callable, Union
 
 
 # 2) протипизировать первое задание
