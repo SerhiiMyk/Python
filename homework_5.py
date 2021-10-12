@@ -36,7 +36,7 @@ class Notebook:
         price = input('write price: ')
         self.__product_list.append(Product(product, price))
         with open('notebook.json', 'w') as file:
-            json.dump(self.__product_list, file)
+            json.dump([item.__dict__ for item in self.__product_list], file)
 
     @staticmethod
     def show_all():
